@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hexa-arch
+  flyway:
+    enabled: false
+logging:
+  level:
+    br.com.grupomateus.library: debug
+    org.springframework.transaction.interceptor: trace
+
+---
+
+spring:
+  profiles: local
+  flyway:
+    enabled: true

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>br.com.grupomateus</groupId>
+    <artifactId>hexa-spring</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>hexa-spring-bootstarter</artifactId>
+  <name>hexa-spring-bootstarter</name>
+  <description>Demo project for Spring Boot</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>br.com.grupomateus</groupId>
+      <artifactId>hexa-domain</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>web</id>
+      <dependencies>
+        <dependency>
+          <groupId>br.com.grupomateus</groupId>
+          <artifactId>hexa-spring-ws-adapter</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>scheduler</id>
+      <dependencies>
+        <dependency>
+          <groupId>br.com.grupomateus</groupId>
+          <artifactId>hexa-spring-scheduler-adapter</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>pubsub</id>
+      <dependencies>
+        <dependency>
+          <groupId>br.com.grupomateus</groupId>
+          <artifactId>hexa-spring-rabbit-adapter</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>local</id>
+      <dependencies>
+        <dependency>
+          <groupId>br.com.grupomateus</groupId>
+          <artifactId>hexa-spring-db-local-adapter</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
